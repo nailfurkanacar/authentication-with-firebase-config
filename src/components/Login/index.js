@@ -30,7 +30,7 @@ const Login = () => {
           type="text"
           name="email"
           id="email"
-          placeholder="hey@chrisoncode.io"
+          placeholder="sample@sample.com"
           className={`block w-full bg-transparent outline-none border-b-2 py-2 px-4  placeholder-purple-500 focus:bg-purple-600 ${
             errors?.email
               ? "text-red-300 border-red-400"
@@ -59,7 +59,7 @@ const Login = () => {
           type="password"
           name="password"
           id="password"
-          placeholder="superduperpassword"
+          placeholder="*******"
           className={`block w-full bg-transparent outline-none border-b-2 py-2 px-4 text-purple-200 focus:bg-purple-600 placeholder-purple-500 ${
             errors?.password ? "border-red-400" : "border-purple-400"
           }`}
@@ -75,7 +75,7 @@ const Login = () => {
       </div>
 
       <button className="inline-block bg-purple-600 text-purple-200 rounded shadow py-2 px-5 text-sm">
-        Submit
+        Login
       </button>
     </form>
   );
