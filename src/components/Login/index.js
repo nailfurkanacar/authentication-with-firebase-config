@@ -1,5 +1,7 @@
 import React from "react";
 import { useForm } from "react-hook-form";
+import { login } from "../../plugins/firebase";
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
   const {
@@ -9,10 +11,21 @@ const Login = () => {
   } = useForm({
     mode: "onSubmit", // can be onBlur as depend
   });
+  const navigate = useNavigate();
 
-  function handleLoginFormSubmit(data) {
+  const handleLoginFormSubmit = async (data) => {
     console.log(data);
-  }
+    await login({
+      email: data?.email,
+      password: data?.password,
+    })
+      .then((res) => {
+        localStorage.setItem("user", JSON.stringify(res));
+        navigate("/authenticated");
+      })
+
+      .catch((err) => console.log("err", err));
+  };
 
   return (
     <form onSubmit={handleSubmit(handleLoginFormSubmit)}>
