@@ -29,3 +29,10 @@ After that =>
 `npm start`
 
 Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+
+<br></br>
+
+### Source
+
+[https://blog.logrocket.com/user-authentication-firebase-react-apps/](https://blog.logrocket.com/user-authentication-firebase-react-apps/)
+[https://www.freecodecamp.org/news/react-firebase-authentication-and-crud-operations/](https://www.freecodecamp.org/news/react-firebase-authentication-and-crud-operations/)
