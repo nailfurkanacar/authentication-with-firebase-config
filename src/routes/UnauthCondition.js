@@ -1,7 +1,7 @@
 import React from "react";
 import { useLocation, Navigate } from "react-router-dom";
 
-function UnauthGuard({ children }) {
+function UnauthCondition({ children }) {
   const user = JSON.parse(localStorage?.getItem("user"));
   let location = useLocation();
 
@@ -9,4 +9,4 @@ function UnauthGuard({ children }) {
   return <Navigate to="/authenticated" state={{ from: location }} replace />;
 }
 
-export default UnauthGuard;
+export default UnauthCondition;

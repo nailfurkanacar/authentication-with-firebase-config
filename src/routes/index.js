@@ -4,8 +4,8 @@ import ForbiddenPage from "../containers/403";
 import AuthPage from "../containers/AuthPage";
 import AuthenticatedPage from "../containers/AuthenticatedPage";
 import UnAuthenticatedPage from "../containers/UnAuthenticatedPage";
-import AuthGuard from "./AuthGuard";
-import UnauthGuard from "./UnauthGuard";
+import AuthCondition from "./AuthCondition";
+import UnauthCondition from "./UnauthCondition";
 
 const AppRoutes = () => {
   return (
@@ -14,25 +14,25 @@ const AppRoutes = () => {
         <Route
           path="/"
           element={
-            <UnauthGuard>
+            <UnauthCondition>
               <AuthPage />
-            </UnauthGuard>
+            </UnauthCondition>
           }
         />
         <Route
           path="/authenticated"
           element={
-            <AuthGuard>
+            <AuthCondition>
               <AuthenticatedPage />
-            </AuthGuard>
+            </AuthCondition>
           }
         />
         <Route
           path="/unauthenticated"
           element={
-            <UnauthGuard>
+            <UnauthCondition>
               <UnAuthenticatedPage />
-            </UnauthGuard>
+            </UnauthCondition>
           }
         />
         <Route path="/403" element={<ForbiddenPage />} />
