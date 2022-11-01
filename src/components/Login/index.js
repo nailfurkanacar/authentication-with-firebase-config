@@ -20,10 +20,11 @@ const Login = () => {
       password: data?.password,
     })
       .then((res) => {
-        localStorage.setItem("user", JSON.stringify(res));
-        navigate("/authenticated");
+        if (res) {
+          localStorage.setItem("user", JSON.stringify(res));
+          navigate("/authenticated");
+        }
       })
-
       .catch((err) => console.log("err", err));
   };
 
